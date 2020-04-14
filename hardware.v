@@ -3,6 +3,6 @@ module top(
     output reg [7:0] cnt,
 );
     always @(posedge clk) begin
-        cnt <= cnt + 1;
+        cnt <= (cnt + 1) * 3;
     end
 endmodule
