@@ -1,0 +1,9 @@
+read -sv hardware.v
+hierarchy -top top
+write_ilang debug_yosys_ast.ilang
+proc; opt
+techmap; opt
+dfflibmap -liberty cell_library.liberty
+abc -liberty cell_library.liberty
+write_json gates.json
+clean
